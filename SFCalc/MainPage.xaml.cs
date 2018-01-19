@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -40,6 +41,10 @@ namespace SFCalc
 
             this.current_in = 0.0;
             this.current_mm = 0.0;
+
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(300, 250));
+            ApplicationView.PreferredLaunchViewSize = new Size(300, 250);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
         private double get_rpm(double sfm, double dia)

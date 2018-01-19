@@ -138,29 +138,29 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="300" Height="250">
-        <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="0,0,0,1"  >
+    <StackPanel Background="#FFAFAFB6" Width="300" Height="250">
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,12,0,0" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="0,0,0,1"  >
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
-                <TextBox x:Name="rpm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1000" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="rpm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
-                <TextBlock Text="RPM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"/>
+                <TextBox x:Name="rpm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1000" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="rpm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="RPM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
-                <TextBox x:Name="dia_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="0.5" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="dia_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
-                <TextBlock Text="Diameter" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"  />
+                <TextBox x:Name="dia_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="0.5" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="dia_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="Diameter" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"  />
             </StackPanel>
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
-                <TextBox x:Name="sfm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="131" PlaceholderText="SFM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" Margin="6,6,6,6" FontStyle="Normal" TextChanging="sfm_entry_TextChanging" TextAlignment="Right" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
-                <TextBlock Text="SFM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"/>
+                <TextBox x:Name="sfm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="131" PlaceholderText="SFM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" Margin="6,6,6,6" FontStyle="Normal" TextChanging="sfm_entry_TextChanging" TextAlignment="Right" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="SFM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"  BorderBrush="Black">
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
-                <TextBox x:Name="mm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="25.4" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="mm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
-                <TextBlock Text="mm" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"/>
+                <TextBox x:Name="mm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="25.4" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="mm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="mm" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
-                <TextBox x:Name="inch_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1.0" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="inch_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
-                <TextBlock Text="inches" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"  />
+                <TextBox x:Name="inch_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1.0" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="inch_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="inches" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"  />
             </StackPanel>
         </StackPanel>
 
