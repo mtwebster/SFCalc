@@ -1,0 +1,168 @@
+﻿<Page
+    x:Class="SFCalc.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SFCalc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="300" Height="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+    <Page.Resources>
+        <Style x:Key="TextBoxWithoutDelete" TargetType="TextBox">
+            <Setter Property="MinWidth" Value="{StaticResource TextControlThemeMinWidth}"/>
+            <Setter Property="MinHeight" Value="{StaticResource TextControlThemeMinHeight}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBoxForegroundThemeBrush}"/>
+            <Setter Property="Background" Value="{StaticResource TextBoxBackgroundThemeBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorderThemeBrush}"/>
+            <Setter Property="BorderThickness" Value="{StaticResource TextControlBorderThemeThickness}"/>
+            <Setter Property="FontFamily" Value="{StaticResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="{StaticResource ControlContentThemeFontSize}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+            <Setter Property="Padding" Value="{StaticResource TextControlThemePadding}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <Grid.Resources>
+                                <!--<Style x:Name="DeleteButtonStyle" TargetType="Button">
+									<Setter Property="Template">
+										<Setter.Value>
+											<ControlTemplate TargetType="Button">
+												<Grid>
+													<VisualStateManager.VisualStateGroups>
+														<VisualStateGroup x:Name="CommonStates">
+															<VisualState x:Name="Normal"/>
+															<VisualState x:Name="PointerOver">
+																<Storyboard>
+																	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BackgroundElement">
+																		<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxButtonPointerOverBackgroundThemeBrush}"/>
+																	</ObjectAnimationUsingKeyFrames>
+																	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="BorderElement">
+																		<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxButtonPointerOverBorderThemeBrush}"/>
+																	</ObjectAnimationUsingKeyFrames>
+																	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="GlyphElement">
+																		<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxButtonPointerOverForegroundThemeBrush}"/>
+																	</ObjectAnimationUsingKeyFrames>
+																</Storyboard>
+															</VisualState>
+															<VisualState x:Name="Pressed">
+																<Storyboard>
+																	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BackgroundElement">
+																		<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxButtonPressedBackgroundThemeBrush}"/>
+																	</ObjectAnimationUsingKeyFrames>
+																	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="BorderElement">
+																		<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxButtonPressedBorderThemeBrush}"/>
+																	</ObjectAnimationUsingKeyFrames>
+																	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="GlyphElement">
+																		<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxButtonPressedForegroundThemeBrush}"/>
+																	</ObjectAnimationUsingKeyFrames>
+																</Storyboard>
+															</VisualState>
+															<VisualState x:Name="Disabled">
+																<Storyboard>
+																	<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundElement"/>
+																	<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderElement"/>
+																</Storyboard>
+															</VisualState>
+														</VisualStateGroup>
+													</VisualStateManager.VisualStateGroups>
+													<Border x:Name="BorderElement" BorderBrush="{StaticResource TextBoxButtonBorderThemeBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+													<Border x:Name="BackgroundElement" Background="{StaticResource TextBoxButtonBackgroundThemeBrush}" Margin="{TemplateBinding BorderThickness}">
+														<TextBlock x:Name="GlyphElement" Foreground="{StaticResource TextBoxButtonForegroundThemeBrush}" FontFamily="{StaticResource SymbolThemeFontFamily}" HorizontalAlignment="Center" Text="&#xE0A4;" VerticalAlignment="Center"/>
+													</Border>
+												</Grid>
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+								</Style>-->
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BackgroundElement">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxDisabledBackgroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="BorderElement">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxDisabledBorderThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentElement">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TextBoxDisabledForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="{StaticResource TextControlBackgroundThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundElement"/>
+                                            <DoubleAnimation Duration="0" To="{StaticResource TextControlBorderThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderElement"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="{StaticResource TextControlPointerOverBackgroundThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundElement"/>
+                                            <DoubleAnimation Duration="0" To="{StaticResource TextControlPointerOverBorderThemeOpacity}" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderElement"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Focused"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="ButtonStates">
+                                    <VisualState x:Name="ButtonVisible">
+                                        <!--<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="DeleteButton">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>-->
+                                    </VisualState>
+                                    <VisualState x:Name="ButtonCollapsed"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="BackgroundElement" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" Margin="{TemplateBinding BorderThickness}"/>
+                            <Border x:Name="BorderElement" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="2"/>
+                            <ScrollViewer x:Name="ContentElement" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" IsTabStop="False" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" Margin="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="Disabled"/>
+                            <!--<Button x:Name="DeleteButton" BorderThickness="{TemplateBinding BorderThickness}" Grid.Column="1" FontSize="{TemplateBinding FontSize}" IsTabStop="False" Style="{StaticResource DeleteButtonStyle}" Visibility="Collapsed" VerticalAlignment="Stretch"/>-->
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="300" Height="250">
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="0,0,0,1"  >
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                <TextBox x:Name="rpm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1000" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="rpm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="RPM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                <TextBox x:Name="dia_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="0.5" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="dia_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="Diameter" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                <TextBox x:Name="sfm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="131" PlaceholderText="SFM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" Margin="6,6,6,6" FontStyle="Normal" TextChanging="sfm_entry_TextChanging" TextAlignment="Right" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="SFM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"  BorderBrush="Black">
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                <TextBox x:Name="mm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="25.4" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="mm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="mm" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                <TextBox x:Name="inch_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1.0" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="4,4,4,4" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="inch_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                <TextBlock Text="inches" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal"  Margin="6,16,6,6"  />
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
+</Page>
