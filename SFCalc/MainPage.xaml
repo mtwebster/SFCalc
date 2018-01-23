@@ -5,7 +5,7 @@
     xmlns:local="using:SFCalc"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Width="300" Height="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+    mc:Ignorable="d" Width="500" Height="250" HorizontalAlignment="Center" VerticalAlignment="Center">
 
 
     <Page.Resources>
@@ -138,7 +138,8 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel Background="#FFAFAFB6" Width="300" Height="250">
+    <StackPanel Background="#FFAFAFB6" Width="500" Height="250">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
         <StackPanel HorizontalAlignment="Stretch" Margin="0,6,0,0" VerticalAlignment="Stretch" BorderBrush="Black"  >
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
                 <TextBox x:Name="rpm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="1000" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="rpm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
@@ -153,7 +154,18 @@
                 <TextBlock Text="SFM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
-        <Rectangle Fill="Black" Height="2" Margin="0,6,0,6" />
+            <StackPanel Margin="0, 6, 0, 0">
+                <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                    <TextBox x:Name="ipm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="10" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="rpm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                    <TextBlock Text="IPM" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
+                    <TextBox x:Name="ipr_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="0.004" PlaceholderText="Diameter" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="dia_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />
+                    <TextBlock Text="IPR" TextWrapping="NoWrap" FontFamily="Arial" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    <Rectangle Fill="Black" Height="2" Margin="0,6,0,6" />
         <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,6" VerticalAlignment="Stretch"  BorderBrush="Black">
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" Padding="6,0,6,0" >
                 <TextBox x:Name="mm_entry" Style="{StaticResource TextBoxWithoutDelete}" Text="25.4" PlaceholderText="Enter RPM" FontSize="16" FontFamily="Arial Unicode MS" FontWeight="Normal" Width="150" TextAlignment="Right" BorderThickness="2,2,2,2" TabIndex="1" TextWrapping="NoWrap" MaxLength="10" InputScope="Digits" AcceptsReturn="False" Margin="6,6,6,6" FontStyle="Normal" TextChanging="mm_entry_TextChanging" GotFocus="entry_GotFocus" DoubleTapped="entry_DoubleTapped" />

@@ -32,6 +32,9 @@ namespace SFCalc
         private double current_in;
         private double current_mm;
 
+        private double current_ipm;
+        private double current_ipr;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -42,8 +45,11 @@ namespace SFCalc
             this.current_in = 0.0;
             this.current_mm = 0.0;
 
-            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(300, 250));
-            ApplicationView.PreferredLaunchViewSize = new Size(300, 250);
+            this.current_ipm = 0.0;
+            this.current_ipr = 0.0;
+
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(500, 250));
+            ApplicationView.PreferredLaunchViewSize = new Size(500, 250);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
@@ -55,6 +61,11 @@ namespace SFCalc
         private double get_sfm(double rpm, double dia)
         {
             return rpm * dia * .262;
+        }
+
+        private void update_rpm()
+        {
+
         }
 
         private void rpm_entry_TextChanging(object sender, TextBoxTextChangingEventArgs e)
